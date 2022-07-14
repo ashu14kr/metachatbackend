@@ -14,7 +14,7 @@ const userroutes = require("./server/routes/user.js");
 app.use("/", userroutes);
 
 app.get("/", (req, res) => {
-    res.send("hellow");
+    res.send("Server is good!!");
 });
 
 
