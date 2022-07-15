@@ -1,6 +1,7 @@
 require("../db/db.js");
 const usermodel = require("../models/user.js");
 
+
 exports.getuser = async (req, res) => {
   try {
     const data = await usermodel.find({});
@@ -11,8 +12,12 @@ exports.getuser = async (req, res) => {
 };
 
 exports.postuser = async (req, res) => {
+  console.log(req.file);
   try {
-    const data = new usermodel(req.body);
+    const data = new usermodel({
+      _id: req.body._id,
+      profileimg: req.file.path
+    });
     await data
       .save()
       .then(() => {
