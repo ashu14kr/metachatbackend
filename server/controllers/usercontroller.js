@@ -16,7 +16,7 @@ exports.postuser = async (req, res) => {
   try {
     const data = new usermodel({
       _id: req.body._id,
-      profileimg: req.file.path
+      profileimg: req.file.filename,
     });
     await data
       .save()
