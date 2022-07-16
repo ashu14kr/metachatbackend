@@ -3,9 +3,9 @@ const usermodel = require("../models/user.js");
 
 
 exports.getuser = async (req, res) => {
-  _id = req.body._id;
+  _id = req.query._id;
   try {
-    const data = await usermodel.find({_id});
+    const data = await usermodel.find({_id: _id});
     res.json(data);
   } catch (error) {
     console.log(error);
