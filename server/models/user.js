@@ -12,7 +12,6 @@ const userSchema = mongoose.Schema({
     "status":{},
     "interests":{},
     "userimgs":{},
-    "uservideos":{},
     "Oath":{},
     "dob":{},
     "height":{},

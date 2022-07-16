@@ -12,10 +12,27 @@ exports.getuser = async (req, res) => {
 };
 
 exports.postuser = async (req, res) => {
+  // console.log(req.files['profileImg'][0].filename);
+  // console.log(req.files['images'][0].filename);
   try {
     const data = new usermodel({
       _id: req.body._id,
-      profileimg: req.files['photos'][1].path,
+      name: req.body.name,
+      nickname: req.body.nickname,
+      email: req.body.email,
+      phoneno: req.body.phoneno,
+      profileimg: req.files['profileImg'][0].filename,
+      location: req.body.location,
+      gender: req.body.gender,
+      status: req.body.status,
+      interests: req.body.interests,
+      userimgs: req.files['images'],
+      Oath: req.body.Oath,
+      dob: req.body.dob,
+      height: req.body.height,
+      weight: req.body.weight,
+      language: req.body.language,
+      haircolor: req.body.haircolor,
     });
     await data
       .save()
