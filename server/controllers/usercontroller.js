@@ -12,7 +12,7 @@ exports.getuser = async (req, res) => {
 };
 
 exports.postuser = async (req, res) => {
-  console.log(req.files);
+  res.send(req.files);
   try {
     const data = new usermodel({
       _id: req.body._id,
