@@ -11,8 +11,10 @@ app.use(express.urlencoded({extended: true}));
 app.use('/uploads', express.static('uploads'));
 
 const userroutes = require("./server/routes/user.js");
+const uservideos = require("./server/routes/uservideos.js");
 
 app.use("/", userroutes);
+app.use("/video", uservideos);
 
 app.get("/", (req, res) => {
     res.send("Server is good!!");
