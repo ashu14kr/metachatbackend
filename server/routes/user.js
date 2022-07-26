@@ -17,6 +17,7 @@ const upload = multer({storage: storage})
 
 
 router.get("/allusers/", userController.getuser);
-router.post("/alluser/", upload.fields([{name: "profileImg"}, {name: "images", maxCount: 4}]) ,userController.postuser);
+router.get("/allusersbygender/", userController.getuserByGender);
+router.post("/alluser/", upload.single("profileImg") ,userController.postuser);
 
 module.exports = router;

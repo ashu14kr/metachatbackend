@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
     "gender":{},
     "status":{},
     "interests":{},
-    "userimgs":{},
+    "levels":{},
     "Oath":{},
     "dob":{},
     "height":{},

@@ -12,6 +12,16 @@ exports.getuser = async (req, res) => {
   }
 };
 
+exports.getuserByGender = async (req, res) => {
+  gender = req.query.gender;
+  try {
+    const data = await usermodel.find({gender: gender});
+    res.json(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 exports.postuser = async (req, res) => {
   // console.log(req.files['profileImg'][0].filename);
   // console.log(req.files['images'][0].filename);
@@ -22,12 +32,12 @@ exports.postuser = async (req, res) => {
       nickname: req.body.nickname,
       email: req.body.email,
       phoneno: req.body.phoneno,
-      profileimg: req.files['profileImg'][0].filename,
+      profileimg: req.file.filename,
       location: req.body.location,
       gender: req.body.gender,
       status: req.body.status,
       interests: req.body.interests,
-      userimgs: req.files['images'],
+      levels: req.body.levels,
       Oath: req.body.Oath,
       dob: req.body.dob,
       height: req.body.height,
