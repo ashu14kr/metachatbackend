@@ -22,6 +22,16 @@ exports.getuserByGender = async (req, res) => {
   }
 };
 
+exports.getuserByStatus = async (req, res) => {
+  s = req.query.status;
+  try {
+    const data = await usermodel.find({status: s});
+    res.json(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 exports.postuser = async (req, res) => {
   // console.log(req.files['profileImg'][0].filename);
   // console.log(req.files['images'][0].filename);
@@ -56,4 +66,17 @@ exports.postuser = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-};
+}
+
+
+exports.changeStatus = async (req, res) => {
+  const _id = req.query._id;
+      try {
+          const data = await usermodel.findByIdAndUpdate(_id, req.body, {
+              new: true
+          });
+          res.json(data);
+      } catch (error) {
+          console.log(error);
+      }
+}
