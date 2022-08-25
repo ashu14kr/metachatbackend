@@ -6,6 +6,7 @@ const matchroomSchema = mongoose.Schema({
     "creatorId": {},
     "connectorId": {},
     "channelId": {},
+    "likes":{},
     "isAvailable": {},
     "status": {}
 

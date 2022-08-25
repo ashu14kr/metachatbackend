@@ -8,6 +8,7 @@ exports.postmatch = async (req, res) => {
             creatorId: req.body.creatorId,
             connectorId: req.body.connectorId,
             channelId: req.body.channelId,
+            likes: req.body.likes,
             isAvailable: req.body.isAvailable,
             status: req.body.status
         });
@@ -52,5 +53,17 @@ exports.match = async (req, res) => {
         } catch (error) {
             console.log(error);
         }
+}
+
+
+
+exports.deleteroom = async (req, res) => {
+    _id = req.query._id;
+    try {
+       const data = await matchroom.deleteOne({_id: _id});
+       res.json(data.deletedCount);
+    } catch (error) {
+        console.log(error);
+    }
 }
 

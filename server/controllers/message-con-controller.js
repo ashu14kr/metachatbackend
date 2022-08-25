@@ -7,6 +7,7 @@ exports.postConnections = async (req, res) => {
       connectedId: req.body.connectedId,
       connectedName: req.body.connectedName,
       connectedImg: req.body.connectedImg,
+      isblocked: req.body.isblocked,
       lastMessage: req.body.lastMessage,
       ownerId: req.body.ownerId,
     });
@@ -48,4 +49,17 @@ exports.getConnectionById = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+}
+
+
+exports.changeStatus = async (req, res) => {
+  const connectedId = req.query.connectedId;
+      try {
+          const data = await connectionModel.findOneAndUpdate(connectedId , req.body, {
+              new: true
+          });
+          res.json(data);
+      } catch (error) {
+          console.log(error);
+      }
 }

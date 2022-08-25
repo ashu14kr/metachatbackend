@@ -4,6 +4,7 @@ const conectionconSchema = mongoose.Schema({
     "connectedId":{},
     "connectedName":{},
     "connectedImg":{},
+    "isblocked": {},
     "lastMessage":{},
     "ownerId":{},
 })

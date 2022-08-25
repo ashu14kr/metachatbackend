@@ -16,6 +16,8 @@ const storage = multer.diskStorage({
   const upload = multer({storage: storage})
 
   router.get("/allusersvideos/", uservideoController.getuservideo);
+  router.delete("/deletevid/", uservideoController.deletevid);
+  router.patch("/doprivate/", uservideoController.updatevidstatus);
   router.get("/allusersvide/", uservideoController.getuservideobyid);
   router.post("/alluservideo/", upload.single("video") ,uservideoController.postuservideo);
 

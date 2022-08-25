@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const userVideosSchema = mongoose.Schema({
     "uid":{},
+    "private":{},
     "video":{},
 });
 

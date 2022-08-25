@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const userImgsSchema = mongoose.Schema({
     "uid":{},
+    "private":{},
     "img":{},
 });
 

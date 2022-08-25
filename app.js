@@ -22,6 +22,15 @@ const calls = require("./server/routes/call.js");
 const agoraToken = require("./server/routes/agora_token.js");
 const messageconnections = require("./server/routes/message-con.js");
 const matchroom = require("./server/routes/matchroom.js");
+const balance = require("./server/routes/balance.js");
+const following = require("./server/routes/following.js");
+const block = require("./server/routes/block.js");
+const gift = require("./server/routes/gift.js");
+const level = require("./server/routes/levelpurchase.js");
+const message = require("./server/routes/message.js");
+const like = require("./server/routes/likes.js");
+const rankings = require("./server/routes/ranking.js");
+const callrecords = require("./server/routes/callrecors.js");
 
 app.use("/", userroutes);
 app.use("/video", uservideos);
@@ -30,6 +39,15 @@ app.use("/calls", calls);
 app.use("/agora", agoraToken);
 app.use("/connect", messageconnections);
 app.use("/room", matchroom);
+app.use("/balance", balance);
+app.use("/followers", following);
+app.use("/block", block);
+app.use("/gift", gift);
+app.use("/level", level);
+app.use("/message", message);
+app.use("/likes", like);
+app.use("/rankings", rankings);
+app.use("/callrecords", callrecords);
 
 app.get("/", (req, res) => {
     res.send("Server is good!!");
@@ -81,30 +99,13 @@ http.listen(port, () => {
 
 
 
-    // Column(
-    //     crossAxisAlignment: CrossAxisAlignment.start,
-    //     mainAxisAlignment: MainAxisAlignment.end,
-    //     children: [
-    //       Container(
-    //         decoration: BoxDecoration(
-    //           color: Colors.pink.shade200,
-    //           borderRadius: BorderRadius.circular(16)
-    //         ),
-    //         child: Padding(
-    //           padding: const EdgeInsets.all(8.0),
-    //           child: Text("Where are you from?", style: TextStyle(color: Color.fromARGB(255, 139, 27, 64),),),
-    //         ),
-    //       ),
-    //       SizedBox(height: size.height/50,),
-    //       Container(
-    //         decoration: BoxDecoration(
-    //           color: languagetextcolor,
-    //           borderRadius: BorderRadius.circular(16)
-    //         ),
-    //         child: Padding(
-    //           padding: const EdgeInsets.all(8.0),
-    //           child: Text("Hello", style: TextStyle(color: Colors.pink.shade100),),
-    //         ),
-    //       )
-    //     ],
-    //   ),
+
+
+
+
+
+
+
+
+           
+

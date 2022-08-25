@@ -16,6 +16,9 @@ const storage = multer.diskStorage({
   const upload = multer({storage: storage})
 
   router.get("/allusersimgs/", userimgsController.getuserimgsbyid);
+  router.delete("/deleteimg/", userimgsController.deleteimg);
+  router.patch("/doprivate/", userimgsController.updateimgstatus);
   router.post("/alluserimg/", upload.single("userimgs") ,userimgsController.postuserimgs);
+  router.post('/uploadmedia/', upload.single("img"), userimgsController.uploadimg);
 
   module.exports = router;
