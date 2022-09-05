@@ -12,6 +12,15 @@ exports.getuser = async (req, res) => {
   }
 };
 
+exports.getalluser = async (req, res) => {
+  try {
+    const data = await usermodel.find({});
+    res.json(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 exports.getuserByGender = async (req, res) => {
   gender = req.query.gender;
   try {
