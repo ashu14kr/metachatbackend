@@ -33,6 +33,7 @@ const rankings = require("./server/routes/ranking.js");
 const callrecords = require("./server/routes/callrecors.js");
 const interests = require("./server/routes/interest.js");
 const customercare = require("./server/routes/customercare.js");
+const transactions = require("./server/routes/transactions");
 
 app.use("/", userroutes);
 app.use("/video", uservideos);
@@ -52,6 +53,7 @@ app.use("/rankings", rankings);
 app.use("/callrecords", callrecords);
 app.use("/interest", interests);
 app.use("/customerCare", customercare);
+app.use("/transactions", transactions);
 
 app.get("/", (req, res) => {
     res.send("Server is good!!");
