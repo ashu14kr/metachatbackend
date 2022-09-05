@@ -39,7 +39,18 @@ exports.getuserByStatus = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-};
+}
+
+
+exports.deleteuser = async (req, res) => {
+  _id = req.query._id;
+  try {
+    const data = await usermodel.deleteOne({_id: _id});
+    res.json(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 exports.postuser = async (req, res) => {
   // console.log(req.files['profileImg'][0].filename);

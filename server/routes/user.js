@@ -22,5 +22,6 @@ router.get("/allusersbygender/", userController.getuserByGender);
 router.get("/allusersbystatus/", userController.getuserByStatus);
 router.post("/alluser/", upload.single("profileImg") ,userController.postuser);
 router.patch("/changestatus/", userController.changeStatus);
+router.delete("/removeuser/", userController.deleteuser);
 
 module.exports = router;
