@@ -34,6 +34,7 @@ const callrecords = require("./server/routes/callrecors.js");
 const interests = require("./server/routes/interest.js");
 const customercare = require("./server/routes/customercare.js");
 const transactions = require("./server/routes/transactions");
+const terms = require("./server/routes/privacypolicy");
 
 app.use("/", userroutes);
 app.use("/video", uservideos);
@@ -54,6 +55,7 @@ app.use("/callrecords", callrecords);
 app.use("/interest", interests);
 app.use("/customerCare", customercare);
 app.use("/transactions", transactions);
+app.use("/terms", terms);
 
 app.get("/", (req, res) => {
     res.send("Server is good!!");
