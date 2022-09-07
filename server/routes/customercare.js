@@ -5,5 +5,6 @@ const customercareController = require("../controllers/customercare");
 
 router.get("/getcustomerquery/", customercareController.getcustomerquery);
 router.post("/postquerys/", customercareController.postQuerys);
+router.delete("/removequery/", customercareController.deletequery);
 
 module.exports = router;

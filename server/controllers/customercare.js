@@ -10,6 +10,16 @@ exports.getcustomerquery = async (req, res) => {
     }
   }
 
+  exports.deletequery = async (req, res) => {
+    _id = req.query._id;
+    try {
+      const data = await Customercaremodel.deleteOne({_id: _id});
+      res.json(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   exports.postQuerys = async (req, res) => {
     try {
       const data = new Customercaremodel({
