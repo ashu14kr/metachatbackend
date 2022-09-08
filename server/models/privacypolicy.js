@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const PolicySchema = mongoose.Schema({
     "privacylink": {},
-    "policylink": {}
+    "policylink": {},
+    "password": {},
 });
 
 module.exports = mongoose.model("PrivacyPolicy", PolicySchema);

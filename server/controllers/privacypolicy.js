@@ -17,6 +17,7 @@ exports.getlinks = async (req, res) => {
       const data = new policymodel({
         privacylink: req.body.privacylink,
         policylink: req.body.policylink,
+        password: req.body.password,
       });
       await data
         .save()
