@@ -28,6 +28,8 @@ exports.getliker = async (req, res) => {
         likedto: req.body.likedto,
         name: req.body.name,
         img: req.body.img,
+        name1: req.body.name1,
+        img1: req.body.img1,
       });
       await data
         .save()

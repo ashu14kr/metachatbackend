@@ -5,6 +5,8 @@ const LikeSchema = mongoose.Schema({
     "likedto": {},
     "name": {},
     "img": {},
+    "name1": {},
+    "img1": {},
 });
 
 module.exports = mongoose.model("Like", LikeSchema);
